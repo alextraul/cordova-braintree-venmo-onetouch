@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.alextr.cordovabtonetouch"
+        version="0.7.0">
+
+  <name>BTOnetouch</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/CDVBTOnetouch.js" target="js/CDVBTOnetouch.js"/>
+
+  <js-module src="www/CDVBTOnetouch.js" name="CDVBTOnetouch">
+    <clobbers target="CDVBTOnetouch" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="CDVBTOnetouch">
+        <param name="android-package" value="com.alextr.plugin.CDVBTOnetouch"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/CDVBTOnetouch.java" target-dir="src/com/example/plugin/"/>
+  </platform>
+
+  <platform name="ios">
+    
+    <config-file target="config.xml" parent="/widget">
+      <feature name="CDVBTOnetouch">
+        <param name="ios-package" value="CDVBTOnetouch" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/CDVBTOnetouch.h" target-dir="CDVBTOnetouch"/>
+    <source-file src="src/ios/CDVBTOnetouch.m" target-dir="CDVBTOnetouch"/>
+  </platform>
+
+ 
+
+</plugin>
